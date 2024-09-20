@@ -1,4 +1,4 @@
 str1 = input()
 str2 = input()
 
-print(str1+str2 == str2+str1)
+print(str(str1+str2 == str2+str1).lower())
