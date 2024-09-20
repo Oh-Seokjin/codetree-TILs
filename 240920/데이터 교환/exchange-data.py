@@ -1,7 +1,5 @@
 a = 5
 b = 6
 c = 7
-b = a
-c = b
-a = c
+a, b, c = c, a, b
 print(f"{a}\n{b}\n{c}")
