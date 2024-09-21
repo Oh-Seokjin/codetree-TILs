@@ -6,6 +6,6 @@ else:
     print("* "*n)
 
     for i in range(n-2):
-        print("* " + "* "*i + "  "**(n-i) + "*")
+        print("* " + "* "*i + "  "*(n-i-2) + "*")
 
     print("* "*n)
