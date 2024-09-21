@@ -4,7 +4,7 @@ for _ in range(5):
     if n%3 == 0:
         cnt += 1
 
-if cnt != 0:
+if cnt == 5:
     print(1)
 else:
     print(0)
