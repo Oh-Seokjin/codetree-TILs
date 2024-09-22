@@ -1,6 +1,6 @@
-text = ord(input())
+text = input()
 
 if text == "a":
     print("z")
 else:
-    print(chr(text-1))
+    print(chr(ord(text)-1))
