@@ -1,6 +1,6 @@
 n = int(input())
 
-num = [list(map(int, input().split())) for _  in range(4)]
+num = [list(map(int, input().split())) for _ in range(4)]
 cnt = 0
 
 dict_ab = {}
@@ -21,8 +21,7 @@ for i in range(n):
             dict_cd[num[2][i] + num[3][j]] += 1
 
 for ab in dict_ab.keys():
-    for cd in dict_cd.keys():
-        if ab + cd == 0:
-            cnt += dict_ab[ab] * dict_cd[cd]
+    if ab*-1 in dict_cd.keys():
+        cnt += dict_ab[ab] * dict_cd[cd]
 
 print(cnt)
