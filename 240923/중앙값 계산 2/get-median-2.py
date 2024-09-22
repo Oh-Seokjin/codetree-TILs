@@ -8,4 +8,5 @@ for i in range(len(nums)):
         break
 
     if i%2==0:
-        print(nums[int(i//2)], end=" ")
+        temp = sorted(nums[:i+1])
+        print(temp[int(i//2)], end=" ")
