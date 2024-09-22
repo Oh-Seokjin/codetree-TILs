@@ -1,7 +1,11 @@
-def sum_two(a, b):
-    _min = min(a, b)+10
-    _max = max(a, b)*2
-    print(_min, _max)
+def cal_two(a, b):
+    if a > b:
+        a = a*2
+        b = b+10
+    else:
+        a = a + 10
+        b  = b*2
+    return [a, b]
 
 a, b = map(int, input().split())
-sum_two(a, b)
+print(" ".join(map(str, cal_two(a, b))))
