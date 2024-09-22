@@ -23,6 +23,6 @@ for i in range(n):
 for ab in dict_ab.keys():
     for cd in dict_cd.keys():
         if ab + cd == 0:
-            cnt += dict_ab[ab]
+            cnt += dict_ab[ab] * dict_cd[cd]
 
 print(cnt)
