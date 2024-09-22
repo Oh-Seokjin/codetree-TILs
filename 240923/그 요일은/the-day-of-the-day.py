@@ -1,5 +1,6 @@
 m1, d1, m2, d2 = map(int, input().split())
 day = input()
+days_list = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 answer = 0
 
 def cnt_days(m):
@@ -15,5 +16,5 @@ def cnt_days(m):
 for m in range(m1, m2):
     answer += cnt_days(m)
 
-answer = answer - d1 + d2
+answer = answer - d1 - days_list.index(day) + d2
 print(answer//7+1)
