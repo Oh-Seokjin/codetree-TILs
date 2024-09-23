@@ -10,22 +10,23 @@ for _ in range(n):
         if "L" not in answer:
             answer[direction] += cnt
         else:
-            if answer["L"] >= cnt:
-                answer["L"] = answer["L"] - cnt
+            if answer["L"] > cnt:
                 answer["R"] = cnt
+                answer["L"] = answer["L"] - cnt                
             else:
-                answer["L"] = 0
-                answer["R"] = cnt
+                answer["R"] = answer["R"] + cnt
+                answer["L"] = 0                
 
     if direction == "L":
         if "R" not in answer:
             answer[direction] += cnt
         else:
-            if answer["R"] >= cnt:
+            if answer["R"] > cnt:
+                answer["L"] = cnt
                 answer["R"] = answer["R"] - cnt
-                answer["L"] = cnt
             else:
+                answer["L"] = answer["L"] + cnt
                 answer["R"] = 0
-                answer["L"] = cnt
+    # print(answer)
 
 print(answer["L"], answer["R"])
