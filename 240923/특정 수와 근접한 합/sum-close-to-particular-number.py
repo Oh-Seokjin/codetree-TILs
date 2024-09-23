@@ -18,10 +18,10 @@ min_diff = 0
 comb_nums = combination(nums, n-2)
 comb_nums = sorted([sum(elem) for elem in comb_nums])
 
-for i in range(len(comb_nums)):
-    if i == 0:
-        min_diff = abs(comb_nums[i]-s)
-    else:
-        if min_diff > abs(comb_nums[i]-s):
-            min_diff = abs(comb_nums[i]-s)
-print(min_diff)
+# for i in range(len(comb_nums)):
+#     if i == 0:
+#         min_diff = abs(comb_nums[i]-s)
+#     else:
+#         if min_diff > abs(comb_nums[i]-s):
+#             min_diff = abs(comb_nums[i]-s)
+# print(min_diff)
