@@ -20,16 +20,16 @@ for team_a in combination_team:
     
     for team_b in combination_b:
         team_c = [elem for elem in rest if elem not in team_b]
-    
-    capa = [sum(team_a),sum(team_b), sum(team_c)]
+        
+        capa = [sum(team_a),sum(team_b), sum(team_c)]
 
-    if len(set(capa)) != 3:
-        continue
-    
-    temp_diff = max(capa) - min(capa)
-    if temp_diff < diff:
-        diff = temp_diff
-        flag = 1
+        if len(set(capa)) != 3:
+            continue
+        
+        temp_diff = max(capa) - min(capa)
+        if temp_diff < diff:
+            diff = temp_diff
+            flag = 1
     
 if flag:
     print(diff)
