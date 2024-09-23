@@ -1,12 +1,15 @@
 def combination(arr, n):
     result = []
+
     if n == 0:
         return [[]]
+    
     for i in range(len(arr)):
         elem = arr[i]
         for rest in combination(arr[i+1:], n-1):
             result.append([elem]+rest)
-    return result   
+    
+    return result
 
 team = list(map(int, input().split()))
 combination_team = combination([i for i in range(len(team))], 2)
@@ -20,10 +23,7 @@ for team_a in combination_team:
     
     for team_b in combination_b:
         team_c = [elem for elem in rest if elem not in team_b]
-        # print(team_a, team_b, team_c)
         capa = [sum([team[i] for i in team_a]),sum([team[i] for i in team_b]), sum([team[i] for i in team_c])]
-        # capa = [0, 0, 0]
-        # print(capa)
 
         if len(set(capa)) != 3:
             continue
@@ -32,7 +32,6 @@ for team_a in combination_team:
         if temp_diff < diff:
             diff = temp_diff
             flag = 1
-            # print(capa, temp_diff)
 
 if flag:
     print(diff)
