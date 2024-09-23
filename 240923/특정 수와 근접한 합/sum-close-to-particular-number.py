@@ -4,10 +4,14 @@ total = sum(nums)
 min_diff = 999999
 
 for i in range(n):
-    for j in range(i+1, n-1):
+    for j in range(i+1, n):
         temp_total = total - nums[i] - nums[j]
-        if temp_total-s < min_diff:
-            min_diff = temp_total-s
+        # print(temp_total)
+        temp_diff = abs(temp_total-s)
+        # print(temp_diff)
+        # print()
+        if temp_diff < min_diff:
+            min_diff = temp_diff
 
 print(min_diff)
 
