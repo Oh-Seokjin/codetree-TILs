@@ -11,7 +11,7 @@ for _ in range(n):
             answer[direction] += cnt
         else:
             if answer["L"] > cnt:
-                answer["R"] = cnt
+                answer["R"] = answer["R"] + cnt
                 answer["L"] = answer["L"] - cnt                
             else:
                 answer["R"] = answer["R"] + cnt
@@ -22,11 +22,10 @@ for _ in range(n):
             answer[direction] += cnt
         else:
             if answer["R"] > cnt:
-                answer["L"] = cnt
+                answer["L"] = answer["L"] + cnt
                 answer["R"] = answer["R"] - cnt
             else:
                 answer["L"] = answer["L"] + cnt
                 answer["R"] = 0
-    # print(answer)
 
 print(answer["L"], answer["R"])
