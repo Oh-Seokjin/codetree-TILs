@@ -9,5 +9,5 @@ del seats[0]
 seats.remove("")
 seats.remove("")
 seats.sort()
-print(seats)
+# print(seats)
 print(len(seats[0])+1)
