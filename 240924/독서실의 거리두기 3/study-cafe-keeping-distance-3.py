@@ -7,5 +7,6 @@ seats.append(seats[0][:len(seats[0])//2])
 seats.append(seats[0][len(seats[0])//2+1:])
 del seats[0]
 seats = [elem for elem in seats if len(elem)>0]
-
+seats.sort()
+# print(seats)
 print(len(seats[0])+1)
