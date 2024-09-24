@@ -1,5 +1,5 @@
 def palindrome(text):
-    if len(text)%2==0:
+    if len(text) == 2:
         return text[:len(text)//2] == text[len(text)//2:]
     else:
         return text[:len(text)//2] == text[len(text)//2+1:]
