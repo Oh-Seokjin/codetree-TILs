@@ -1,6 +1,6 @@
 def is_palindrome(text):
-    reversed_text = "".join(reversed(text))
-    return text == reversed_text
+    # reversed_text = "".join(reversed(text))
+    return text == text[::-1]
 
 x, y = map(int, input().split())
 
