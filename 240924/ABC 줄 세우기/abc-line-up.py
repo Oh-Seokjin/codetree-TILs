@@ -1,5 +1,7 @@
 n = int(input())
 arr = list(input().split())
+#####
+
 goal = [chr(ord("A") + i) for i in range(n)]
 
 cnt = 0
