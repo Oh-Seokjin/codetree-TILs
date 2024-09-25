@@ -8,11 +8,12 @@ for i in range(n):
     stores[i] -= leader_max
 
 for i in range(n):
+    # print(stores)
     if stores[i] <= 0:
         continue
     answer += stores[i] // member_max
     stores[i] = stores[i] % member_max
-    if stores[i] <= member_max:
+    if stores[i] != 0 and stores[i] <= member_max:
         answer += 1
         stores[i] -= member_max
 
