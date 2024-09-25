@@ -7,16 +7,13 @@ answer = n
 for i in range(n):
     stores[i] -= leader_max
 
-while True:
-    if max(stores) <= 0:
-        break
-    for i in range(n):
-        if stores[i] <= 0:
-            break
-        answer += stores[i] // member_max
-        stores[i] = stores[i] % member_max
-        if stores[i] <= member_max:
-            answer += 1
-            stores[i] -= member_max
+for i in range(n):
+    if stores[i] <= 0:
+        continue
+    answer += stores[i] // member_max
+    stores[i] = stores[i] % member_max
+    if stores[i] <= member_max:
+        answer += 1
+        stores[i] -= member_max
 
 print(answer)
