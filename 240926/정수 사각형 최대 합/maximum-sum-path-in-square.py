@@ -5,17 +5,22 @@ max_sum = [[0]*n for _ in range(n)]
 
 # initial values
 max_sum[0][0] = board[0][0]
-for x in range(n):
-    temp_sum = 0
-    for i in range(x+1):
-        temp_sum += board[0][i]
-    max_sum[0][x] = temp_sum
+for x in range(1, n):
+    max_sum[0][x] = max_sum[0][x-1] + board[0][x]
 
 for y in range(n):
-    temp_sum = 0
-    for i in range(y+1):
-        temp_sum += board[i][0]
-    max_sum[y][0] = temp_sum
+    max_sum[y][0]  = max_sum[y-1][0] + board[y][0]
+    
+#     temp_sum = 0
+#     for i in range(x+1):
+#         temp_sum += board[0][i]
+#     max_sum[0][x] = temp_sum
+
+# for y in range(n):
+#     temp_sum = 0
+#     for i in range(y+1):
+#         temp_sum += board[i][0]
+#     max_sum[y][0] = temp_sum
 
 # fill
 for row in range(1, n):
