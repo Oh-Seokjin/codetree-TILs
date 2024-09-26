@@ -21,6 +21,7 @@ for y in range(n):
 for row in range(1, n):
     for col in range(1, n):
         max_sum[row][col] = max(max_sum[row-1][col], max_sum[row][col-1]) + board[row][col]
-            
+
+max_sum[0][0] = board[0][0]
 
 print(max(max_sum[n-1]))
