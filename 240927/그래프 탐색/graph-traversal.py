@@ -9,7 +9,6 @@ for _ in range(m):
 #####
 
 def dfs(v):
-    print(v)
     visited[v] = 1
     for curr_v in range(n):
         if graph[v][curr_v] and not visited[curr_v]:
