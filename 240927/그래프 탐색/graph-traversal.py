@@ -18,6 +18,6 @@ def dfs(v):
             
 cnt = 0
 
-dfs(1)
+dfs(0)
 
 print(cnt)
