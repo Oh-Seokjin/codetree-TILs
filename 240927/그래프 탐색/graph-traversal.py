@@ -1,5 +1,5 @@
 n, m = map(int, input().split())
-graph = [[0 for _ in range(n)] for _ in range(n)]
+graph = [[0 for _ in range(n+1)] for _ in range(n+1)]
 visited = [0 for _ in range(n+1)]
 
 for _ in range(m):
@@ -9,18 +9,17 @@ for _ in range(m):
 #####
 
 cnt = 0
-visited[0] = 1
+visited[1] = 1
 
 def dfs(v):
-    
+    global cnt    
     for curr_v in range(n):
         if graph[v][curr_v] and not visited[curr_v]:
             visited[v] = 1
-            global cnt
             cnt += 1
             dfs(curr_v)
             
 
-dfs(0)
+dfs(1)
 
 print(cnt)
