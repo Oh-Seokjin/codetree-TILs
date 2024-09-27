@@ -35,7 +35,7 @@ def dfs(x, y):
             dfs(new_x, new_y)
 
 
-max_k = 0
+max_k = 1
 max_safe_area = 0
 
 for k in range(1, top_h+1):
