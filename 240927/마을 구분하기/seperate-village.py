@@ -32,7 +32,7 @@ def dfs(x, y):
             visited[new_x][new_y] = 1
             dfs(new_x, new_y)
 
-board[0][0] = town_num
+# board[0][0] = town_num
 
 for i in range(n):
     for j in range(n):
@@ -44,11 +44,16 @@ for i in range(n):
 answer = []
 for row in board:
     answer.extend(row)
-print(max(answer)-1)
+answer = [elem for elem in answer if elem != 0]
 
-residents = []
-for i in range(2, max(answer)+1):
-    residents.append(answer.count(i))
-residents.sort()
-for elem in residents:
-    print(elem)
+if answer:
+    print(max(answer)-1)
+
+    residents = []
+    for i in range(2, max(answer)+1):
+        residents.append(answer.count(i))
+    residents.sort()
+    for elem in residents:
+        print(elem)
+else:
+    print(0)
