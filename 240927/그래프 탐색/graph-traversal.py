@@ -9,9 +9,9 @@ for _ in range(m):
 #####
 
 def dfs(v):
+    visited[v] = 1
     for curr_v in range(n):
         if graph[v][curr_v] and not visited[curr_v]:
-            visited[v] = 1
             global cnt
             cnt += 1
             dfs(curr_v)
