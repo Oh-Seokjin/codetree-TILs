@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10 ** 30)
+sys.setrecursionlimit(10 ** 9)
 
 n, m = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(n)]
