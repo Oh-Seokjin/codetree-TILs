@@ -32,8 +32,6 @@ def dfs(x, y):
             visited[new_x][new_y] = 1
             dfs(new_x, new_y)
 
-# board[0][0] = town_num
-
 for i in range(n):
     for j in range(n):
         if visited[i][j] == 0:
