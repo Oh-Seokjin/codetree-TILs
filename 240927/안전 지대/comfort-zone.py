@@ -32,9 +32,6 @@ def dfs(x, y):
         new_x, new_y = x+dx, y+dy
         if can_go(new_x, new_y):
             visited[new_x][new_y] = 1
-            # for row in visited:
-            #     print(row)
-            # print()
             dfs(new_x, new_y)
 
 
@@ -51,17 +48,13 @@ for k in range(1, top_h+1):
             if board[i][j] <= k:
                 visited[i][j] = 1
     
-    # for row in visited:
-    #     print(row)
-    
     for i in range(n):
         for j in range(m):
             if not visited[i][j]:
                 dfs(i, j)
                 num_safe_area += 1
-    # print(num_safe_area)
     if max_safe_area < num_safe_area:
         max_safe_area = num_safe_area
         max_k = k
-    # print()
+
 print(max_k, max_safe_area)
