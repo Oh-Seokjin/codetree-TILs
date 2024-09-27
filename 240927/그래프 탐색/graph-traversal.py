@@ -8,15 +8,18 @@ for _ in range(m):
 
 #####
 
+cnt = 0
+visited[0] = 1
+
 def dfs(v):
-    visited[v] = 1
+    
     for curr_v in range(n):
         if graph[v][curr_v] and not visited[curr_v]:
+            visited[v] = 1
             global cnt
             cnt += 1
             dfs(curr_v)
             
-cnt = 0
 
 dfs(0)
 
