@@ -49,7 +49,7 @@ def dfs(x, y):
 
 dfs(0, 0)
 
-for row in visited:
-    print(row)
+# for row in visited:
+#     print(row)
 
 print(visited[n-1][m-1])
