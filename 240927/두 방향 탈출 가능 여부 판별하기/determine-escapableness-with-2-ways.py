@@ -25,7 +25,10 @@ def can_go(x, y):
     if not in_range(x, y):
         return False
     
-    if visited[x][y] or board[x][y] == 0:
+    if visited[x][y]:
+        return False
+    
+    if board[x][y] == 0:
         return False
 
     return True
@@ -43,7 +46,6 @@ def dfs(x, y):
             order += 1
             visited[new_x][new_y] = 1
             dfs(new_x, new_y)
-    return
 
 dfs(0, 0)
 
