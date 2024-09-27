@@ -28,7 +28,7 @@ def dfs(x, y):
             curr_block_size += 1
             dfs(new_x, new_y)
             
-max_block_size = 0
+max_block_size = 1
 num_blocks = 0
 
 for i in range(n):
