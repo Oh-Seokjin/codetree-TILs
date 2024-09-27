@@ -18,7 +18,7 @@ visited[0][0] = 1
 
 
 def in_range(x, y):
-    return 0<=x and x<m and 0<=y and y<n
+    return 0<=x and x<n and 0<=y and y<m
 
 
 def can_go(x, y):
@@ -27,7 +27,7 @@ def can_go(x, y):
     
     if visited[x][y]:
         return False
-    
+
     if board[x][y] == 0:
         return False
 
@@ -48,8 +48,5 @@ def dfs(x, y):
             dfs(new_x, new_y)
 
 dfs(0, 0)
-
-# for row in visited:
-#     print(row)
 
 print(visited[n-1][m-1])
