@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10 ** 30)
+
 n, m = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(n)]
 top_h = max(max(board))
