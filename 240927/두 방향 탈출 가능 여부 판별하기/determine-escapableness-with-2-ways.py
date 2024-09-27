@@ -43,10 +43,11 @@ def dfs(x, y):
             order += 1
             visited[new_x][new_y] = 1
             dfs(new_x, new_y)
+    return
 
 dfs(0, 0)
 
-# for row in visited:
-#     print(row)
+for row in visited:
+    print(row)
 
 print(visited[n-1][m-1])
