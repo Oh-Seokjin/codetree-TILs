@@ -22,7 +22,7 @@ def can_go(x, y):
 
 def dfs(x, y):
     global town_num
-    dxs, dys = [1, 0], [0, 1]
+    dxs, dys = [1, 0, -1, 0], [0, 1, 0, -1]
 
     for dx, dy in zip(dxs, dys):
         new_x, new_y = x+dx, y+dy
