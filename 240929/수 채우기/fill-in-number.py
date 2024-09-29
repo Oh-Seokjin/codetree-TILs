@@ -1,5 +1,5 @@
 n = int(input())
-INF = 1e11
+INF = 100000
 ###
 
 ans = INF
