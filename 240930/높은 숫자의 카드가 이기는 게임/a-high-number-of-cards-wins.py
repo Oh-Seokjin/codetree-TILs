@@ -1,19 +1,21 @@
 n = int(input())
-cards = [i for i in range(1, 2*n+1)]
+a = [i for i in range(1, 2*n+1)]
 ###
-
-# print(cards)
-cnt = 0
-
+b = []
 for _ in range(n):
-    b = int(input())
-    cards.pop(cards.index(b))
-    for i in range(b+1, 2*n+1):
-        if i in cards:
-            cards.pop(cards.index(i))
-            cnt += 1
-            break
-        else:
-            continue
+    card = int(input())
+    b.append(a.pop(a.index(card)))
 
-print(cnt)
+a.sort()
+a_win_cnt = 0
+
+for i in range(n):
+    cur_b = b.pop(0)
+    for j in range(len(a)):
+        cur_a = a[j]
+        if cur_b < cur_a:
+            a.pop(j)
+            a_win_cnt += 1
+            break
+
+print(a_win_cnt)
