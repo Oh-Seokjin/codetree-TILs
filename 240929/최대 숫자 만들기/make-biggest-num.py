@@ -1,5 +1,7 @@
 # cmp_to_key 사용 관련하여 해설 확인함
 
+from functools import cmp_to_key
+
 n = int(input())
 arr = [int(input()) for _ in range(n)]
 ###
