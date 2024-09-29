@@ -1,10 +1,8 @@
 n = int(input())
-a = [i for i in range(1, 2*n+1)]
+
 ###
-b = []
-for _ in range(n):
-    card = int(input())
-    b.append(a.pop(a.index(card)))
+b = [int(input()) for _ in range(n)]
+a = [num for num in range(1, 2*n+1) if num not in b]
 
 a.sort()
 b.sort()
