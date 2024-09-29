@@ -5,9 +5,9 @@ p = list(map(int, input().split()))
 max_profit = 0
 
 for i in range(n):
-    for j in range(i+1, n):
-        temp_profit = p[j] - p[i]
-        max_profit = max(max_profit, temp_profit)
+    future_max = max(p[i+1])
+    temp_profit = future_max - p[i]
+    max_profit = max(max_profit, temp_profit)
 
 print(max_profit)
 
