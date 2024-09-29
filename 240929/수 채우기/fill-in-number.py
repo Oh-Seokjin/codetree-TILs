@@ -1,15 +1,15 @@
 n = int(input())
-coins = [5, 2]
+INF = 1e11
 ###
 
-cnt = 0
+ans = MAX_NUM
 
-for coin in coins:
-    if coin <= n:
-        cnt += n // coin
-        n = n % coin
+for i in range(0, INF + 1):
+    remainder = n - 5 * i
+    if remainder >= 0 and remainder % 2 == 0:
+        ans = min(ans, i + (remainder // 2))
     
-if n != 0:
-    print(-1)
-else:
-    print(cnt)
+if ans == MAX_NUM:
+    ans = -1
+
+print(ans)
