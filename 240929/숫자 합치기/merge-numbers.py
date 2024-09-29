@@ -1,18 +1,19 @@
+import heapq
+
 n = int(input())
 arr = list(map(int, input().split()))
 ###
-
+pq = []
 cost = 0
 
-while True:
-    if len(arr) == 1:
-        break
-    arr.sort(reverse=True)
-    min1 = arr.pop()
-    min2 = arr.pop()
-    cost += min1+min2
-    arr.append(min1+min2)
+for elem in arr:
+    heapq.heappush(pq, elem)
 
+while len(pq) > 1:
+    x1 = heapq.heappop(pq)
+    x2 = heapq.heappop(pq)
+    cost += (x1 + x2)
+    heapq.heappush(pq, x1 + x2)
     # min1 = arr.pop(arr.index(min(arr)))
     # min2 = arr.pop(arr.index(min(arr)))
     # temp_cost = min1+min2
