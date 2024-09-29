@@ -11,6 +11,8 @@ jewels.sort(key=lambda x: x[2], reverse=True)
 bag_value = 0
 
 while True:
+    if not jewels:
+        break
     if jewels[0][0] <= m:
         bag_value += jewels[0][1]
         m -=jewels[0][0]
