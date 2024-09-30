@@ -4,16 +4,23 @@ r, c = map(int, input().split())
 r, c = r-1, c-1
 ###
 
+def in_range(x, y):
+    return 0<=x and x<n and 0<=y and y<n
+
 def bomb(r, c):
     global board
     
     size = board[r][c]
     
     for i in range(size):
-        board[r][c-i] = 0
-        board[r][c+i] = 0
-        board[r-i][c] = 0
-        board[r+i][c] = 0
+        if in_range(r, c-i):
+            board[r][c-i] = 0
+        if in_range(r, c+i):
+            board[r][c+i] = 0
+        if in_range(r-i, c):
+            board[r-i][c] = 0
+        if in_range(r+i, c):
+            board[r+i][c] = 0
 
 def gravity():
     global board
