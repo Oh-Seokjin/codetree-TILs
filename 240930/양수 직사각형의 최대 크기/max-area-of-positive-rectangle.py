@@ -21,7 +21,7 @@ for x in range(n):
                 for dx in range(sq_x):
                     for dy in range(sq_y):
                         nx, ny = x+dx, y+dy
-                        if board[nx][ny] < 0:
+                        if board[nx][ny] <= 0:
                             temp_size = -1
             answer = max(answer, temp_size)
 
