@@ -26,8 +26,6 @@ while True:
         if cnt == 1:
             end_cnt += 1
 
-    if end_cnt == len(arr):
-        break
     
     for s, e in bomb:
         for i in range(s, e):
@@ -37,6 +35,8 @@ while True:
         if elem != 0:
             temp.append(elem)
     arr = temp
+    if end_cnt == len(arr):
+        break
 
 if not arr:
     print(0)
