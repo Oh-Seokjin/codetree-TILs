@@ -11,9 +11,22 @@ else:
     while True:
         if run[0] != run[-1]:
             break
-        temp = run[0]
-        run = run[1:] + [temp]
-    for elem in set(run):
-        rle = rle + elem + str(run.count(elem))
+        temp = run[-1]
+        run = [temp] + run[:-1]
+    
+    search = run[0]
+    cnt = 1
+    for i in range(1, len(run)):
+        if run[i] == search:
+            cnt += 1
+        else:
+            rle = rle + search + str(cnt)
+            search = run[i]
+            cnt = 1
+        if i == len(run)-1:
+            rle = rle + search + str(cnt)
+
+    # print(run)
+    # print(rle)
 
 print(len(rle))
