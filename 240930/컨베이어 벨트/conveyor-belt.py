@@ -25,6 +25,8 @@ for elem in d:
     print(elem, end=" ")
 
 # 아래처럼 풀거나, flatten해서 풀 수 있지만, 아무래도 2차원 행렬 조작 공부 목적에는 부합하지 않는 것 같아 해설 보고 다시 작성
+# 위 방식이 시간도 더 빠름!
+
 # n, t = map(int, input().split())
 # arr = [list(map(int, input().split())) for _ in range(2)]
 # ###
