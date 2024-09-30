@@ -48,20 +48,38 @@ for floor, direction in winds:
     down_floor = floor
     up_direction = direction
     down_direction = direction
-    while True:
-        if up_propagate(up_floor):
-            up_floor -= 1
-            up_direction += 1
-            wind(up_floor, up_direction)
-        else:
-            break
-    while True:
-        if down_propagate(down_floor):
-            down_floor += 1
-            down_direction += 1
-            wind(down_floor, down_direction)
-        else:
-            break
+    if floor == 0:
+        while True:
+            if down_propagate(down_floor):
+                down_floor += 1
+                down_direction += 1
+                wind(down_floor, down_direction)
+            else:
+                break
+    elif floor == n:
+        while True:
+            if up_propagate(up_floor):
+                up_floor -= 1
+                up_direction += 1
+                wind(up_floor, up_direction)
+            else:
+                break
+    else:
+        while True:
+            if up_propagate(up_floor):
+                up_floor -= 1
+                up_direction += 1
+                wind(up_floor, up_direction)
+            else:
+                break
+
+        while True:
+            if down_propagate(down_floor):
+                down_floor += 1
+                down_direction += 1
+                wind(down_floor, down_direction)
+            else:
+                break
     
 for row in building:
     for elem in row:
