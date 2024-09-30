@@ -44,42 +44,29 @@ def down_propagate(f):
 
 for floor, direction in winds:
     wind(floor, direction)
-    up_floor = floor
-    down_floor = floor
-    up_direction = direction
-    down_direction = direction
-    if floor == 0:
-        while True:
-            if down_propagate(down_floor):
-                down_floor += 1
-                down_direction += 1
-                wind(down_floor, down_direction)
-            else:
-                break
-    elif floor == n:
-        while True:
-            if up_propagate(up_floor):
-                up_floor -= 1
-                up_direction += 1
+    up_floor, down_floor = floor, floor
+    up_direction, down_direction = direction, direction
+    
+    while True:
+        if up_propagate(up_floor):
+            up_floor -= 1
+            up_direction += 1
+            if up_floor >= 0:
                 wind(up_floor, up_direction)
             else:
                 break
-    else:
-        while True:
-            if up_propagate(up_floor):
-                up_floor -= 1
-                up_direction += 1
-                wind(up_floor, up_direction)
-            else:
-                break
-
-        while True:
-            if down_propagate(down_floor):
-                down_floor += 1
-                down_direction += 1
+        else:
+            break
+    while True:
+        if down_propagate(down_floor):
+            down_floor += 1
+            down_direction += 1
+            if down_floor <= n:
                 wind(down_floor, down_direction)
             else:
                 break
+        else:
+            break
     
 for row in building:
     for elem in row:
