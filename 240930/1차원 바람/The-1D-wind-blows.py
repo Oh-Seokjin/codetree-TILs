@@ -24,7 +24,7 @@ def wind(f, direction):
 def up_propagate(f):
     flag = 0
     if f == 0:
-        return flag
+        return 0
     c_floor, u_floor = building[f-1], building[f-2]
     for c, u in zip(c_floor, u_floor):
         if c == u:
@@ -34,7 +34,7 @@ def up_propagate(f):
 def down_propagate(f):
     flag = 0
     if f == n:
-        return flag
+        return 0
     c_floor, d_floor = building[f-1], building[f]
     for c, d in zip(c_floor, d_floor):
         if c == d:
@@ -51,20 +51,14 @@ for floor, direction in winds:
         if up_propagate(up_floor):
             up_floor -= 1
             up_direction += 1
-            if up_floor >= 0:
-                wind(up_floor, up_direction)
-            else:
-                break
+            wind(up_floor, up_direction)
         else:
             break
     while True:
         if down_propagate(down_floor):
             down_floor += 1
             down_direction += 1
-            if down_floor <= n:
-                wind(down_floor, down_direction)
-            else:
-                break
+            wind(down_floor, down_direction)
         else:
             break
     
