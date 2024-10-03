@@ -3,7 +3,7 @@ original_board = [list(map(int, input().split())) for _ in range(n)]
 ###
 
 def in_range(x, y):
-    return 0<=x and x<n+1 and 0<=y and y<n+1
+    return 0<=x and x<n and 0<=y and y<n
 
 def bomb(board, x, y, size):
     #가로
@@ -45,15 +45,11 @@ def count_pair(board):
 
 max_cnt = 0
 
-for bomb_size in range(n):
-    for i in range(n):
-        for j in range(n):
-            temp = [[original_board[x][y] for y in range(n)] for x in range(n)]
-            temp = bomb(temp, i, j, bomb_size)
-            temp = gravity(temp)
-            if count_pair(temp) == 6:
-                for row in temp:
-                    print(row)
-            max_cnt = max(max_cnt, count_pair(temp))
-
+for i in range(n):
+    for j in range(n):
+        temp = [[original_board[x][y] for y in range(n)] for x in range(n)]
+        temp = bomb(temp, i, j, temp[i][j]-1)
+        temp = gravity(temp)
+        max_cnt = max(max_cnt, count_pair(temp))
+            
 print(max_cnt)
