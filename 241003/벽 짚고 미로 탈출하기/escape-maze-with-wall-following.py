@@ -5,6 +5,8 @@ board = [[x for x in input()] for _ in range(n)]
 ###
 
 visited = [[[0, 0, 0, 0]]*n for _ in range(n)]
+# print(visited)
+# print(len(visited), len(visited[0]), len(visited[0][0]))
 cnt = 0
 
 def in_range(x, y):
@@ -17,11 +19,12 @@ wall_x, wall_y = [1, 0, -1, 0], [0, 1, 0, -1]
 d = 0
 
 while True:
+    # print(r, c, visited[r][c])
     nr, nc = r+dxs[d], c+dys[d]
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    elif sum(visited[nr][nc]) == 4:
+    elif sum(visited[nr][nc]) == 4 or visited[r][c][d] == 1:
         cnt = -1
         break
 
