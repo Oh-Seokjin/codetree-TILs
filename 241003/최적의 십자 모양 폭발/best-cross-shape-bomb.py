@@ -48,8 +48,8 @@ for bomb_size in range(n):
     for i in range(n):
         for j in range(n):
             temp = [[original_board[x][y] for x in range(n)] for y in range(n)]
-            bomb(temp, i, j, bomb_size)
-            gravity(temp)
+            temp = bomb(temp, i, j, bomb_size)
+            temp = gravity(temp)
             max_cnt = max(max_cnt, count_pair(temp))
 
 print(max_cnt)
