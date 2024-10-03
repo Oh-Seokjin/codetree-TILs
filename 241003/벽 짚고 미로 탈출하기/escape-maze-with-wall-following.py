@@ -22,7 +22,7 @@ while True:
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    if sum(visited[nr][nc]) == 4:
+    elif sum(visited[nr][nc]) == 4:
         cnt = -1
         break
 
@@ -35,17 +35,17 @@ while True:
             r, c = nr, nc
             cnt += 1
             visited[r][c][d] += 1
-            d += 1
-            if d == 4:
-                d = 0
+            d = d-1
+            if d == -1:
+                d = 3
             r, c = r+dxs[d], c+dys[d]
             cnt += 1
             visited[r][c][d] += 1
     elif board[nr][nc] == "#":
         visited[r][c][d] += 1
-        d -= 1
-        if d == -1:
-            d = 3
+        d +=1
+        if d == 4:
+            d = 0
 
 print(cnt)
 # for row in board:
