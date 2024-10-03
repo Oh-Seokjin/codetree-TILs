@@ -33,12 +33,12 @@ def gravity(board):
     return trans
 
 def count_pair(board):
-    cnt = 0
+    cnt = -1
     for x in range(n):
         for y in range(n):
             for dx, dy in zip([1, 0], [0, 1]):
                 nx, ny = x+dx, y+dy
-                if in_range(nx, ny) and board[nx][ny] and (board[x][y] == board[nx][ny]):
+                if in_range(nx, ny) and board[x][y] and board[x][y] == board[nx][ny]:
                     cnt += 1
     return cnt
 
