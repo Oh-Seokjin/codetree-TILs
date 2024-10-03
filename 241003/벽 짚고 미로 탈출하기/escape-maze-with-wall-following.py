@@ -12,6 +12,7 @@ def in_range(x, y):
     return 0<=x and x<n and 0<=y and y<n
 
 dxs, dys = [0, -1, 0, 1], [1, 0, -1, 0]
+
 wall_x, wall_y = [1, 0, -1, 0], [0, 1, 0, -1]
 
 d = 0
@@ -34,17 +35,17 @@ while True:
             r, c = nr, nc
             cnt += 1
             visited[r][c][d] += 1
-            d = d-1
-            if d == -1:
-                d = 3
+            d += 1
+            if d == 4:
+                d = 0
             r, c = r+dxs[d], c+dys[d]
             cnt += 1
             visited[r][c][d] += 1
     elif board[nr][nc] == "#":
-        visited[r][c][d] = 1
-        d +=1
-        if d == 4:
-            d = 0
+        visited[r][c][d] += 1
+        d -= 1
+        if d == -1:
+            d = 3
 
 print(cnt)
 # for row in board:
