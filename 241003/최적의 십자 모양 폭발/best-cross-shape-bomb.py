@@ -3,7 +3,7 @@ original_board = [list(map(int, input().split())) for _ in range(n)]
 ###
 
 def in_range(x, y):
-    return 0<=x and x<n-1 and 0<=y and y<n-1
+    return 0<=x and x<n+1 and 0<=y and y<n+1
 
 def bomb(board, x, y, size):
     #가로
