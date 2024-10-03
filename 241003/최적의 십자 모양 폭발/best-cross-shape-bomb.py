@@ -22,6 +22,7 @@ def gravity(board):
     temp = [[]*n for _ in range(n)]
     trans = list(map(list, zip(*board)))
 
+
     for i in range(n):
         for elem in trans[i]:
             if elem != 0:
@@ -33,7 +34,7 @@ def gravity(board):
     return trans
 
 def count_pair(board):
-    cnt = -1
+    cnt = 0
     for x in range(n):
         for y in range(n):
             for dx, dy in zip([1, 0], [0, 1]):
@@ -47,9 +48,12 @@ max_cnt = 0
 for bomb_size in range(n):
     for i in range(n):
         for j in range(n):
-            temp = [[original_board[x][y] for x in range(n)] for y in range(n)]
+            temp = [[original_board[x][y] for y in range(n)] for x in range(n)]
             temp = bomb(temp, i, j, bomb_size)
             temp = gravity(temp)
+            if count_pair(temp) == 6:
+                for row in temp:
+                    print(row)
             max_cnt = max(max_cnt, count_pair(temp))
-
+            
 print(max_cnt)
