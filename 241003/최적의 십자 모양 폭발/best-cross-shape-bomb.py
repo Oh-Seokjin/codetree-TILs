@@ -3,7 +3,7 @@ original_board = [list(map(int, input().split())) for _ in range(n)]
 ###
 
 def in_range(x, y):
-    return 0<=x and x<n and 0<=y and y<n
+    return 0<=x and x<n-1 and 0<=y and y<n-1
 
 def bomb(board, x, y, size):
     #가로
@@ -55,5 +55,5 @@ for bomb_size in range(n):
                 for row in temp:
                     print(row)
             max_cnt = max(max_cnt, count_pair(temp))
-            
+
 print(max_cnt)
