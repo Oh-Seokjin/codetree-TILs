@@ -21,7 +21,7 @@ while True:
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    if sum(visited[nr][nc]) == 4:
+    if 0 not in visited[nr][nc]:
         cnt = -1
         break
 
