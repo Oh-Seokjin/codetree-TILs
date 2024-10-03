@@ -19,12 +19,14 @@ wall_x, wall_y = [1, 0, -1, 0], [0, 1, 0, -1]
 d = 0
 
 while True:
-    # print(r, c, visited[r][c])
+    # print(r, c)
+    # print(visited)
+    # print(visited[r][c])
     nr, nc = r+dxs[d], c+dys[d]
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    elif sum(visited[nr][nc]) == 4 or visited[r][c][d] == 1:
+    elif sum(visited[nr][nc]) == 101:
         cnt = -1
         break
 
@@ -32,20 +34,20 @@ while True:
         if board[nr+wall_x[d]][nc+wall_y[d]] == "#":
             r, c = nr, nc
             cnt += 1
-            visited[r][c][d] = 1
+            visited[r][c][d] += 1
         elif board[nr+wall_x[d]][nc+wall_y[d]] == ".":
             r, c = nr, nc
-            visited[r][c][d] = 1
+            visited[r][c][d] += 1
             cnt += 1
             d -= 1
             if d == -1:
                 d = 3
             r, c = r+dxs[d], c+dys[d]
-            visited[r][c][d] = 1
+            visited[r][c][d] += 1
             cnt += 1
             
     elif board[nr][nc] == "#":
-        visited[r][c][d] = 1
+        visited[r][c][d] += 1
         d +=1
         if d == 4:
             d = 0
