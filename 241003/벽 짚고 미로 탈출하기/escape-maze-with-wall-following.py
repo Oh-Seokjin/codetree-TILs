@@ -22,7 +22,7 @@ while True:
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    elif sum(visited[nr][nc]) == 105:
+    elif sum(visited[nr][nc]) == 4:
         cnt = -1
         break
 
