@@ -5,6 +5,11 @@ n = 4
 
 def gravity():
     global board
+    for i in range(n):
+        for j in range(n):
+            if board[i][j] == 0:
+                board[i].pop(j)
+                board[i].append(0)
 
     board = [x[::-1] for x in board]
 
@@ -59,10 +64,12 @@ elif d == "U":
     rotate(90)
     gravity()
     rotate(270)
-elif d == "L":
+elif d == "D":
     rotate(270)
     gravity()
     rotate(90)
+
+# rotate(270)
 
 for i in range(n):
     for j in range(n):
