@@ -21,7 +21,7 @@ while True:
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
         break
-    if 0 not in visited[nr][nc]:
+    if sum(visited[nr][nc]) == 8:
         cnt = -1
         break
 
@@ -41,7 +41,7 @@ while True:
             cnt += 1
             visited[r][c][d] += 1
     elif board[nr][nc] == "#":
-        visited[r][c][d] += 1
+        visited[r][c][d] = 1
         d +=1
         if d == 4:
             d = 0
