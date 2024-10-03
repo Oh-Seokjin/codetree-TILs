@@ -5,7 +5,6 @@ board = [[x for x in input()] for _ in range(n)]
 ###
 
 visited = [[[0, 0, 0, 0] for _ in range(n)] for _ in range(n)]
-# visited = [[[0, 0, 0, 0]]*n for _ in range(n)]
 
 cnt = 0
 
@@ -19,8 +18,6 @@ wall_x, wall_y = [1, 0, -1, 0], [0, 1, 0, -1]
 d = 0
 
 while True:
-    # print(visited)
-    # print()
     nr, nc = r+dxs[d], c+dys[d]
     if nr == n or nc == n or nr == -1 or nc == -1:
         cnt += 1
