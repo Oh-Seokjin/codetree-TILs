@@ -11,30 +11,36 @@ def in_range(x, y):
 
 def move():
     global balls
+    temp = [[0 for _ in range(n)] for _ in range(n)]
 
     for x in range(n):
         for y in range(n):
             if balls[x][y]:
                 for dx, dy in zip(dxs, dys):
                     nx, ny = x+dx, y+dy
-                    if in_range(nx, ny) and board[x][y] < board[nx][ny]:
-                        balls[x][y] -=1
-                        balls[nx][ny] += 1
+                    if in_range(nx, ny) and board[x][y] < board[nx][ny] and balls[x][y]:
+                        # print(nx, ny)
+                        temp[nx][ny] += 1
                         break
+                    else:
+                        temp[x][y] += 1
+    return temp
 
-def remove_collision():
+def remove_collision(temp):
     global balls
-
     for x in range(n):
         for y in range(n):
-            if balls[x][y] >= 2 or balls[x][y] <= 0:
-                balls[x][y] = 0
+            if temp[x][y] >= 2:
+                temp[x][y] = 0
+    balls = temp
+    
 
 dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
 
 for _ in range(t):
-    move()
-    remove_collision()
+    temp = move()
+    remove_collision(temp)
+    # print(balls)
 
 cnt = 0
 
