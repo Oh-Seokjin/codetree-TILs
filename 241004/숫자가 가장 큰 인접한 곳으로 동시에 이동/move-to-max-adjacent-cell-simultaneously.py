@@ -18,7 +18,7 @@ def move():
                 for dx, dy in zip(dxs, dys):
                     nx, ny = x+dx, y+dy
                     if in_range(nx, ny) and board[x][y] < board[nx][ny]:
-                        balls[x][y] = 0
+                        balls[x][y] -=1
                         balls[nx][ny] += 1
                         break
 
@@ -27,7 +27,7 @@ def remove_collision():
 
     for x in range(n):
         for y in range(n):
-            if balls[x][y] >= 2:
+            if balls[x][y] >= 2 or balls[x][y] <= 0:
                 balls[x][y] = 0
 
 dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
