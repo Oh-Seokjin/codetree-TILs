@@ -28,6 +28,7 @@ def move():
                         balls[x][y] -= 1
                         balls[nx][ny] += 1
                         break
+            # print(balls)
 
 def remove_collision():
     global balls
